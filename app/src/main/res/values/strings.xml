@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">MyZodiac</string>
+    <string name="txtNacimiento">Fecha de nacimiento:</string>
+    <string name="txtInputFecha">Selecciona una fecha (dd/mm/aaaa)</string>
+    <string name="placeHolderFecha">dd/mm/aaaa</string>
+    <string name="txtBotonAceptar">Aceptar</string>
+    <string name="txtBotonVolver">Volver</string>
+    <string name="txtEdad">Tienes %d años</string>
+    <string name="txtSigno">Tu signo es: %s</string>
+
+    <string-array name="signo">
+        <item>Capricornio</item>
+        <item>Acuario</item>
+        <item>Piscis</item>
+        <item>Aries</item>
+        <item>Tauro</item>
+        <item>Géminis</item>
+        <item>Cáncer</item>
+        <item>Leo</item>
+        <item>Virgo</item>
+        <item>Libra</item>
+        <item>Escorpio</item>
+        <item>Sagitario</item>
+    </string-array>
+</resources>

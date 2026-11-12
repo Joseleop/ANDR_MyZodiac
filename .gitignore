@@ -1,0 +1,26 @@
+# Built application files
+*.apk
+*.apks
+*.aab
+
+# Files for the JVM in the project
+.gradle/
+/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+local.properties
+
+# IDE specific files
+.idea/
+.DS_Store
+*.iml
+.classpath
+.project
+.settings/
+
+# Output directories
+/out/
+
+# Android Studio Navigation editor temp files
+.navigation/
