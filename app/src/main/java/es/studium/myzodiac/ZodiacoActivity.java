@@ -1,7 +1,9 @@
 package es.studium.myzodiac;
 
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +17,8 @@ public class ZodiacoActivity extends AppCompatActivity {
     Button btnVolver;
     TextView tvEdad;
     TextView tvSigno;
+    ImageView imgSigno;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,9 +29,10 @@ public class ZodiacoActivity extends AppCompatActivity {
             return insets;
         });
 
-        btnVolver = findViewById(R.id.btnVolver);
         tvEdad = findViewById(R.id.tvEdad);
         tvSigno = findViewById(R.id.tvSigno);
+        imgSigno = findViewById(R.id.imgSigno);
+        btnVolver = findViewById(R.id.btnVolver);
 
 
         String fecha = getIntent().getStringExtra("fecha");
@@ -60,46 +65,55 @@ public class ZodiacoActivity extends AppCompatActivity {
 
     private void calcularZodiaco(int dia, int mes) {
         String[] listaSignos = getResources().getStringArray(R.array.signo);
-        String signo = "";
+        int indexSigno = 0;
+
+        TypedArray listaIconos = getResources().obtainTypedArray(R.array.iconosSignos);
+
         switch (mes) {
             case 1:
-                signo = (dia <= 20) ? listaSignos[0] : listaSignos[1];
+                indexSigno = (dia <= 20) ? 0 : 1;
                 break;
             case 2:
-                signo = (dia <= 18) ? listaSignos[1] : listaSignos[2];
+                indexSigno = (dia <= 18) ? 1 : 2;
                 break;
             case 3:
-                signo = (dia <= 20) ? listaSignos[2] : listaSignos[3];
+                indexSigno = (dia <= 20) ? 2 : 3;
                 break;
             case 4:
-                signo = (dia <= 20) ? listaSignos[3] : listaSignos[4];
+                indexSigno = (dia <= 20) ? 3 : 4;
                 break;
             case 5:
-                signo = (dia <= 20) ? listaSignos[4] : listaSignos[5];
+                indexSigno = (dia <= 20) ? 4 : 5;
                 break;
             case 6:
-                signo = (dia <= 20) ? listaSignos[5] : listaSignos[6];
+                indexSigno = (dia <= 20) ? 5 : 6;
                 break;
             case 7:
-                signo = (dia <= 22) ? listaSignos[6] : listaSignos[7];
+                indexSigno = (dia <= 22) ? 6 : 7;
                 break;
             case 8:
-                signo = (dia <= 22) ? listaSignos[7] : listaSignos[8];
+                indexSigno = (dia <= 22) ? 7 : 8;
                 break;
             case 9:
-                signo = (dia <= 22) ? listaSignos[8] : listaSignos[9];
+                indexSigno = (dia <= 22) ? 8 : 9;
                 break;
             case 10:
-                signo = (dia <= 22) ? listaSignos[9] : listaSignos[10];
+                indexSigno = (dia <= 22) ? 9 : 10;
                 break;
             case 11:
-                signo = (dia <= 21) ? listaSignos[10] : listaSignos[11];
+                indexSigno = (dia <= 21) ? 10 : 11;
                 break;
             case 12:
-                signo = (dia <= 21) ? listaSignos[11] : listaSignos[0];
+                indexSigno = (dia <= 21) ? 11 : 0;
                 break;
         }
-        String signoComprobado =  getString(R.string.txtSigno,signo);
+        String signo = listaSignos[indexSigno];
+        String signoComprobado = getString(R.string.txtSigno, signo);
         tvSigno.setText(signoComprobado);
+
+        int drawableId = listaIconos.getResourceId(indexSigno, 0);
+        imgSigno.setImageResource(drawableId);
+
+        listaIconos.recycle();
     }
 }

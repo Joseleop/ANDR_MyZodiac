@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="iconosSignos">
+        <item>@drawable/ic_capricornio</item>
+        <item>@drawable/ic_acuario</item>
+        <item>@drawable/ic_piscis</item>
+        <item>@drawable/ic_aries</item>
+        <item>@drawable/ic_tauro</item>
+        <item>@drawable/ic_geminis</item>
+        <item>@drawable/ic_cancer</item>
+        <item>@drawable/ic_leo</item>
+        <item>@drawable/ic_virgo</item>
+        <item>@drawable/ic_libra</item>
+        <item>@drawable/ic_escorpio</item>
+        <item>@drawable/ic_sagitario</item>
+    </array>
+</resources>
