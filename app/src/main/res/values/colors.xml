@@ -2,7 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="color_signo">#215421</color>
+    <color name="color_signo">#E2BF54</color>
     <color name="calendario_cabecera">#755F20</color>
     <color name="calendario_acento">#BD9B38</color>
 </resources>
