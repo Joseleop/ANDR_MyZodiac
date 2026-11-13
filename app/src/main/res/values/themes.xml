@@ -1,9 +1,24 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+<resources>
     <style name="Base.Theme.MyZodiac" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/calendario_cabecera</item>
     </style>
 
     <style name="Theme.MyZodiac" parent="Base.Theme.MyZodiac" />
+
+    <style name="TemaCalendario" parent="ThemeOverlay.AppCompat">
+        <item name="android:colorAccent">@color/calendario_acento</item>
+        <item name="android:colorControlActivated">@color/calendario_acento</item>
+        <item name="colorAccent">@color/calendario_acento</item>
+        <item name="colorPrimary">@color/calendario_cabecera</item>
+    </style>
+
+    <style name="EstiloDatePicker" parent="android:Widget.Material.DatePicker">
+        <item name="android:headerBackground">@color/calendario_cabecera</item>
+    </style>
+
+    <style name="EstiloBoton" parent="Widget.Material3.Button">
+        <item name="android:layout_width">165dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:textSize">20sp</item>
+    </style>
 </resources>

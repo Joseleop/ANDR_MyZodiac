@@ -35,17 +35,14 @@ public class ZodiacoActivity extends AppCompatActivity {
         btnVolver = findViewById(R.id.btnVolver);
 
 
-        String fecha = getIntent().getStringExtra("fecha");
-        if (fecha == null) return;
+        btnVolver.setOnClickListener(v -> finish());
 
-        int dia = Integer.parseInt(fecha.substring(0, 2));
-        int mes = Integer.parseInt(fecha.substring(3, 5));
-        int anoNacimiento = Integer.parseInt(fecha.substring(6, 10));
+        int dia = getIntent().getIntExtra("dia", 1);
+        int mes = getIntent().getIntExtra("mes", 1);
+        int anoNacimiento = getIntent().getIntExtra("anio", 2000);
 
         calcularZodiaco(dia, mes);
         calcularEdad(anoNacimiento, mes, dia);
-
-        btnVolver.setOnClickListener(v -> finish());
 
     }
 
@@ -71,7 +68,7 @@ public class ZodiacoActivity extends AppCompatActivity {
 
         switch (mes) {
             case 1:
-                indexSigno = (dia <= 20) ? 0 : 1;
+                indexSigno = (dia <= 19) ? 0 : 1;
                 break;
             case 2:
                 indexSigno = (dia <= 18) ? 1 : 2;
@@ -80,7 +77,7 @@ public class ZodiacoActivity extends AppCompatActivity {
                 indexSigno = (dia <= 20) ? 2 : 3;
                 break;
             case 4:
-                indexSigno = (dia <= 20) ? 3 : 4;
+                indexSigno = (dia <= 19) ? 3 : 4;
                 break;
             case 5:
                 indexSigno = (dia <= 20) ? 4 : 5;

@@ -22,20 +22,21 @@
 
     <DatePicker
         android:id="@+id/datePickerCalendario"
+        style="@style/EstiloDatePicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:calendarViewShown="false"
         android:datePickerMode="calendar"
+        android:theme="@style/TemaCalendario"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5" />
+
     <Button
         android:id="@+id/btnAceptar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/EstiloBoton"
         android:layout_marginBottom="48dp"
         android:text="@string/txtBotonAceptar"
         app:layout_constraintBottom_toBottomOf="parent"
